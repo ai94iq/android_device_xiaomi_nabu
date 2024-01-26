@@ -16,11 +16,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Inherit Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
-# Conditionally inherit GMS makefiles
-ifneq ("$(wildcard vendor/partner_gms/products/gms.mk)", "")
-$(call inherit-product, vendor/partner_gms/products/gms.mk)
-endif
-
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
@@ -328,7 +323,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-lmodroid
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -449,3 +444,6 @@ PRODUCT_BOOT_JARS += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/nabu/nabu-vendor.mk)
+
+# Inherit Gapps and Pixel stuff
+$(call inherit-product, vendor/google/gms/config.mk)

@@ -54,6 +54,3 @@ persist.vendor.data.mode=concurrent
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
-
-# Updater
-lineage.updater.uri=https://raw.githubusercontent.com/dev-harsh1998/ota/master/nb.json
